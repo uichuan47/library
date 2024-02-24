@@ -1,0 +1,62 @@
+site_name: Kento's Wiki
+
+theme:
+  name: 'material'
+
+nav:
+  - Home: index.md
+  - Dev_documents:
+      - Dev_documents/about_git/git.md
+      - Dev_documents/request_process/网络请求流程.md
+  #     - Dev_documents/prac/prac.md
+  #     - Dev_documents/HTML/reference.md
+  #     - Dev_documents/html_doc/HTML手册.md
+  #     - Dev_documents/css_doc/CSS手册.md
+  #     - Dev_documents/css_doc_plus/CSS_advanced.md
+  #     - Dev_documents/pycharm_ad/pc_help.md
+      - Dev_documents/oppProgramming/opp.md
+  #     - Dev_documents/java/meetJava.md
+  #     - Dev_documents/javaGUI/javaGUI.md
+  #     - Dev_documents/javaGUIhomework/javaGUIhomework.md
+  - Django:
+      - Django/hello.md
+      - Django/message/message.md
+      - Django/requestObj/restframeworkRequestObj.md
+      - Django/restframework_authentication/restframework_authentication.md
+      - Django/restframework_permission/restframework_permission.md
+      - Django/restframeworkThrottle/restframeworkThrottle.md
+#      - Django/drf/day14drf.md
+      - Django/restframework_practice/restframework_blog.md
+      - Django/reatframework_serializer/reatframework_serializer.md
+      - Django/reatframework_serializer_isvalid/reatframework_serializer_isvalid.md
+      - Django/reatframework_version/reatframework_version.md
+      - Django/restframework_pager/restframework_pager.md
+      - Django/django_Jsonresponse/django_Jsonresponse.md
+      - Django/django_QueryDict/django_QueryDict.md
+      - Django/django_request/django_request.md
+      - Django/metaClass/metaClass.md
+
+
+#   - project:
+    #   - project/tables/tables.md
+
+#   - Vue:
+    #   - 1.Vue基础: Vue/Vue_01/Vue_01.md
+
+#   - Match:
+    #   - dataMinning: jupyter/AliDataAnalysis.html
+  - C(2022):
+      - 1.数据类型和输入输出: C(2022)/before/before.md
+      - 2.scanf: C(2022)/scanf/scanf.md
+      - 3.运算符与逻辑运算: C(2022)/expression/expression.md
+      - 4.指针: C(2022)/pointer/pointer.md
+      - 5.结构体: C(2022)/struct/struct.md
+  - DataStruct:
+      - 1.时间&空间复杂度: DataStruct/complexity/complexity.md
+      - 2.线性表: DataStruct/LinearList/LinearList.md
+      - 3.栈: DataStruct/stack/stack.md
+      - 4.队列: DataStruct/queue/queue.md
+      - 5.树: DataStruct/tree/tree.md
+#      - 6.图: DataStruct/map/map.md
+      - 7.查找: DataStruct/search/search.md
+      - 8.排序: DataStruct/sort/sort.md
