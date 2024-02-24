@@ -1,0 +1,2213 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>Vue基础 - Kento's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vue" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Kento&#39;s Wiki" class="md-header__button md-logo" aria-label="Kento's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kento's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vue基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Kento&#39;s Wiki" class="md-nav__button md-logo" aria-label="Kento's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Kento's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev_documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dev_documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev_documents/about_git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.关于Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev_documents/request_process/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.网络请求流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev_documents/oppProgramming/opp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.面向对象程序设计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/hello/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/message/message/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.message组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/requestObj/restframeworkRequestObj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.restframework Request对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_authentication/restframework_authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.restframework认证组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_permission/restframework_permission/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.restframework权限组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframeworkThrottle/restframeworkThrottle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.restframework 限流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_practice/restframework_blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.restframework：blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/reatframework_serializer/reatframework_serializer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.restframework序列化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/reatframework_serializer_isvalid/reatframework_serializer_isvalid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.restframework数据校验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/reatframework_version/reatframework_version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.restframework版本控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_pager/restframework_pager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.restframework Pager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/django_Jsonresponse/django_Jsonresponse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.JsonResponse对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/django_QueryDict/django_QueryDict/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.DjangoQueryDict对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/django_request/django_request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.djangoRequest对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/metaClass/metaClass/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.metaclass元类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C(2022)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            C(2022)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/before/before/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.数据类型和输入输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/scanf/scanf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.scanf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/expression/expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.运算符与逻辑运算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/pointer/pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.指针
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/struct/struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.结构体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DataStruct
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            DataStruct
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/complexity/complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.时间&空间复杂度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/LinearList/LinearList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.线性表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/stack/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/queue/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/tree/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/search/search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/sort/sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.插值语法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.文本指令
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.事件指令
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.属性指令
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5style-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.style &amp; class
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.条件渲染
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.列表渲染
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.事件处理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.过滤案例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.表单控制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.购物车案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.购物车案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础版本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      购物车拓展全选功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      购物车拓展加减功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12v-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.v-model 拓展
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vue">Vue基础</h1>
+<p><a href="https://cn.vuejs.org/">官方网站🎈</a></p>
+<ul>
+<li>组件化开发</li>
+<li>单页面开发中组件的替换</li>
+</ul>
+<h3 id="1">1.插值语法</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;插值&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;box&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;字符串：{{name}}&lt;/li&gt;
+        &lt;li&gt;数值：{{age}}&lt;/li&gt;
+        &lt;li&gt;数组：{{list1}}&lt;/li&gt;
+        &lt;li&gt;对象：{{obj1}}&lt;/li&gt;
+        &lt;li&gt;字符串：{{link1}}&lt;/li&gt;
+        &lt;li&gt;运算：{{10+20+30+40}}&lt;/li&gt;
+        &lt;li&gt;三目运算符：{{10&gt;20?'是':'否'}}&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    let vm = new Vue({
+        el: '#box', // 在box这个div中可以写 vue的语法
+        data: {
+            name: 'Darker', // 字符串
+            age: 18, // 数值
+            list1: [1,2,3,4],   // 数组
+            obj1: {name: 'Darker', age: 19}, // 对象
+            link1: '&lt;a href=&quot;https://www.baidu.com&quot;&gt;百度一下 你就知道&lt;/a&gt;'
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="2">2.文本指令</h3>
+<pre><code>v-html      让HTML渲染成页面  
+v-text      标签内容显示对应的文本
+v-show      放入bool类型，控制显示与否 
+v-if        放入bool类型，控制显示与否
+</code></pre>
+<p><img alt="image-20221031195617290" src="../assets/image-20221031195617290.png" /></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div&gt;
+            &lt;h3&gt;1.v-html&lt;/h3&gt;
+            &lt;div&gt;div 渲染&lt;/div&gt;
+            &lt;div v-html=&quot;s&quot;&gt;&lt;/div&gt;
+            &lt;div&gt;p标签 渲染&lt;/div&gt;
+            &lt;p v-html=&quot;s&quot;&gt;&lt;/p&gt;
+            &lt;h3&gt;
+                把变量的内容当作html标签渲染到页面中
+            &lt;/h3&gt;
+            &lt;hr&gt;
+
+            &lt;h3&gt;2.v-text&lt;/h3&gt;
+            &lt;div v-text=&quot;s&quot;&gt;&lt;/div&gt;
+            &lt;div&gt;当作文本渲染 ，如果原来标签有内容，v-text会覆盖原来标签的内容&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;hr&gt;
+
+        &lt;div&gt;
+            &lt;h3&gt;
+                3. v-show &amp; v-if
+            &lt;/h3&gt;
+            &lt;div&gt;
+                只能跟true或者false，运算结果是bool类型，控制标签的显示与否
+            &lt;/div&gt;
+            &lt;div v-show=&quot;res1&quot;&gt;apple&lt;/div&gt;
+            &lt;div v-show=&quot;res2&quot;&gt;apple&lt;/div&gt;
+            &lt;div v-show=&quot;res1&quot;&gt;pear&lt;/div&gt;
+            &lt;div v-show=&quot;res2&quot;&gt;pear&lt;/div&gt;
+            &lt;div&gt;v-show 即使结果为false，也会存在该标签，只是不显示&lt;/div&gt;
+            &lt;div v-text=&quot;text&quot;&gt;&lt;/div&gt;
+            &lt;div&gt;对于v-if，如果为false，标签根本不会存在 ，效率比较低&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    new Vue({
+        el: '#app',
+        data: {
+            s: &quot;&lt;input type='text'&gt;&quot;,
+            res1: true,
+            res2: false,
+            text: &quot;&lt;div style=\&quot;display: none;\&quot;&gt;apple&lt;/div&gt;&quot;,
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="3">3.事件指令</h3>
+<p><strong>使用<code>@</code>符号触发事件</strong></p>
+<p><strong>@click</strong></p>
+<pre><code>@click=&quot;function&quot;
+...
+methods: {
+    function(){
+        ...
+    }
+}
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+
+
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handleClick&quot;&gt;Login&lt;/button&gt;
+    &lt;div v-show=&quot;display&quot;&gt;
+        &lt;p&gt;hello world&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            display: false,
+        },
+        methods: {
+            handleClick() {
+                console.log(&quot;handleClick&quot;);
+                this.display = !this.display;
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="4">4.属性指令</h3>
+<p><code>v-bind:class="js变量"</code>可以简写为<code>:class="js变量"</code></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+    &lt;style&gt;
+        .red{
+            border: solid 1px red;
+        }
+        .yellow{
+            border: solid 1px yellow;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id=&quot;app&quot;&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handlerClick&quot;&gt;点我变色&lt;/button&gt;
+    &lt;div :class=&quot;color&quot; style=&quot;width: 100px;height: 100px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            color:'red',
+        },
+        methods: {
+            handlerClick(){
+                this.color= &quot;yellow&quot;
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="5style-class">5.style &amp; class</h3>
+<pre><code>:属性名=js变量/js语法
+        :class=&quot;js变量,数组,字符串&quot;
+        :style=&quot;js变量,数组,字符串&quot;
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handlerClick&quot;&gt;点我变大&lt;/button&gt;
+    &lt;div :style=&quot;style_obj&quot;&gt;
+        &lt;div&gt;hello world&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            style_obj :{
+                height:'200px',
+                width:'200px',
+                border:&quot;solid 1px red&quot;,
+                fontSize:&quot;30px&quot;,
+            }
+        },
+        methods: {
+            handlerClick(){
+                this.style_obj.fontSize=&quot;40px&quot;
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="6">6.条件渲染</h3>
+<ul>
+<li>v-if</li>
+<li>v-else</li>
+<li>v-else-if</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handlerClick&quot;&gt;点我变换&lt;/button&gt;
+    &lt;div&gt;
+        &lt;div v-if=&quot;score&gt;90&quot;&gt;优秀&lt;/div&gt;
+        &lt;div v-if=&quot;score&gt;80 &amp;&amp; score &lt;= 90&quot;&gt;不优秀&lt;/div&gt;
+    &lt;/div&gt;
+
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            score:91
+        },
+        methods: {
+            handlerClick(){
+                this.score=82;
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="7">7.列表渲染</h3>
+<p><strong>v-for指令</strong></p>
+<pre><code>- 循环数组
+    v-for=&quot;(url,index) in urls&quot;
+- 循环对象
+    v-for=&quot;(value,key) in obj&quot;
+- 循环数字，从1开始循环到数字的个数
+    v-for=&quot;i in num&quot;
+</code></pre>
+<p><img alt="image-20221031210417291" src="../assets/image-20221031210417291.png" /></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handlClick&quot;&gt;点我凸头&lt;/button&gt;
+    &lt;ul v-for=&quot;item in li&quot;&gt;
+        &lt;li&gt;每天都在-&gt;{{item}}&lt;/li&gt;
+    &lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            li:[&quot;吃饭&quot;,&quot;睡觉&quot;,&quot;打豆豆&quot;]
+        },
+        methods: {
+            handlClick(){
+                this.li.push(&quot;凸头&quot;)
+                console.log(this.li)
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="8">8.事件处理</h3>
+<ul>
+<li>input 当输入框进行输入时触发的事件</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handleInput&quot;&gt;点我change&lt;/button&gt;
+    &lt;p&gt;输入你的想法&lt;input type=&quot;text&quot; v-model=&quot;name&quot; @input=&quot;Input&quot;&gt;&lt;/p&gt;----&gt;{{name}}
+
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            name: &quot;wupeiqi&quot;
+        },
+        methods: {
+            handleInput() {
+                this.name = &quot;wusir&quot;
+            },
+            Input(){
+                alert(&quot;input&quot;)
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>change 当元素的值发生改变时触发的事件</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handleInput&quot;&gt;点我change&lt;/button&gt;
+    &lt;p&gt;change&lt;input type=&quot;text&quot; v-model=&quot;name&quot; @change=&quot;changefunc&quot;&gt;&lt;/p&gt;----&gt;{{name}}
+
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            name: &quot;wupeiqi&quot;
+        },
+        methods: {
+            handleInput() {
+                this.name = &quot;wusir&quot;
+            },
+            changefunc(){
+                alert(&quot;change&quot;)
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>blur 当输入框失去焦点时触发的事件</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;!--    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot; @click=&quot;handleInput&quot;&gt;点我change&lt;/button&gt;--&gt;
+    &lt;p&gt;change&lt;input type=&quot;text&quot; v-model=&quot;name&quot; @blur=&quot;blurfunc&quot;&gt;&lt;/p&gt;----&gt;{{name}}
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            name: &quot;wupeiqi&quot;
+        },
+        methods: {
+            blurfunc() {
+                alert(&quot;blur~~~&quot;)
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>change和blur最本质的区别是：</p>
+<p>如果输入框为空，失去焦点后，change不会出发，但是blur会出发</p>
+</blockquote>
+<h3 id="9">9.过滤案例</h3>
+<p>监听input事件</p>
+<p><strong>前戏</strong></p>
+<pre><code>js数组内置过滤方法filter
+var l=['a', 'apple', 'atom', 'b', 'banana', 'csrf', 'cii', 'dd', 'dogge']
+var newList = l.filter(function(item){
+                    return true
+                })
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;h2 style=&quot;margin-left: 20px&quot;&gt;过滤案例&lt;/h2&gt;
+    &lt;div class=&quot;container&quot; style=&quot;margin-top: 30px&quot;&gt;
+        &lt;p&gt;查询 &lt;input type=&quot;text&quot; v-model=&quot;search&quot; @input=&quot;handleInput&quot;&gt;&lt;/p&gt;
+
+        &lt;ul v-for=&quot;data in newList&quot;&gt;
+            &lt;li&gt;{{data}}&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+
+
+&lt;script&gt;
+    var vm = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            search: '',
+            dataList: ['a', 'apple', 'atom', 'b', 'banana', 'csrf', 'cii', 'dd', 'dogge'],
+            newList: ['a', 'apple', 'atom', 'b', 'banana', 'csrf', 'cii', 'dd', 'dogge']
+        },
+        methods: {
+            handleInput() {
+                this.newList = this.dataList.filter(item=&gt;{
+                    return item.indexOf(this.search)&gt;-1
+                })
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="10">10.表单控制</h3>
+<ul>
+<li>checkbox选中</li>
+</ul>
+<p><img alt="image-20221102114018543" src="../assets/image-20221102114018543.png" /></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;box&quot;&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;请输入用户名：&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;password&quot; placeholder=&quot;请输入密码：&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; v-model=&quot;radio&quot;&gt;记住用户名
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            myText: '',
+            textBig: '',
+            radio: false,
+        },
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>单选&amp;多选</li>
+</ul>
+<pre><code>- 单选
+    使用input标签，用v-model，value是提交的数据
+    &lt;input type=&quot;radio&quot; v-model=&quot;sradio&quot; value=&quot;男&quot;&gt;男
+
+- 多选
+    使用input标签，v-model=&quot;many&quot;，此处必须是many，来绑定多选类型
+    &lt;input type=&quot;checkbox&quot; v-model=&quot;many&quot; value=&quot;篮球&quot;&gt;篮球
+</code></pre>
+<p><img alt="image-20221102114522014" src="../assets/image-20221102114522014.png" /></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;box&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;hr&gt;
+        &lt;div&gt;
+            &lt;h2&gt;checkbox&lt;/h2&gt;
+            &lt;input type=&quot;text&quot; placeholder=&quot;请输入用户名：&quot;&gt;&lt;br&gt;
+            &lt;input type=&quot;password&quot; placeholder=&quot;请输入密码：&quot;&gt;&lt;br&gt;
+            &lt;input type=&quot;checkbox&quot; v-model=&quot;radio&quot;&gt;记住用户名
+            radio状态---&gt;{{radio}}
+        &lt;/div&gt;
+        &lt;hr&gt;
+        &lt;div&gt;
+            &lt;h2&gt;单选&lt;/h2&gt;
+            &lt;input type=&quot;radio&quot; v-model=&quot;sradio&quot; value=&quot;男&quot;&gt;男
+            &lt;input type=&quot;radio&quot; v-model=&quot;sradio&quot; value=&quot;女&quot;&gt;女
+            &lt;input type=&quot;radio&quot; v-model=&quot;sradio&quot; value=&quot;保密&quot;&gt;保密
+            &lt;br&gt;&lt;br&gt;您选择的性别：{{sradio}}
+        &lt;/div&gt;
+        &lt;hr&gt;
+        &lt;div&gt;
+            &lt;h2&gt;多选&lt;/h2&gt;
+            &lt;input type=&quot;checkbox&quot; v-model=&quot;many&quot; value=&quot;篮球&quot;&gt;篮球
+            &lt;input type=&quot;checkbox&quot; v-model=&quot;many&quot; value=&quot;足球&quot;&gt;足球
+            &lt;input type=&quot;checkbox&quot; v-model=&quot;many&quot; value=&quot;棒球&quot;&gt;棒球
+            &lt;input type=&quot;checkbox&quot; v-model=&quot;many&quot; value=&quot;桌球&quot;&gt;桌球
+            &lt;br&gt;&lt;br&gt;您喜欢的球类：{{many}}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            myText: '',
+            textBig: '',
+            radio: false,
+            sradio: '',
+            many:[],
+        },
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="11">11.购物车案例</h3>
+<p><strong>前戏：js循环的实现</strong></p>
+<ul>
+<li>基础版本</li>
+</ul>
+<pre><code class="language-javascript">for(let i=0;i&gt;3;i++){
+    console.log(i);
+}
+</code></pre>
+<ul>
+<li>in 循环 es5语法</li>
+</ul>
+<pre><code class="language-js">for(let member in obj){
+    ...
+}
+</code></pre>
+<ul>
+<li>for ... of... 循环 es6语法</li>
+</ul>
+<pre><code class="language-js">for(item of arr){
+    console.log(&quot;item--&gt;&quot;,item);
+}
+</code></pre>
+<ul>
+<li>对于数组的for each循环</li>
+</ul>
+<pre><code class="language-js">$.each(可迭代对象,function(ket,val){
+    ...;
+})
+</code></pre>
+<pre><code class="language-js">var a=[11,22,33]
+var obj = {
+    name:&quot;wupeiqi&quot;,
+    age:19,
+}
+$.each(a,function(key,val){
+    console.log(key);
+    console.log(val);
+})
+</code></pre>
+<h4 id="_1"><strong>基础版本</strong></h4>
+<p>只做购物车的选择，展示选择的商品&amp;总价</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;app&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-md-6 col-md-offset-3&quot;&gt;
+                &lt;div style=&quot;margin-top: 30px&quot;&gt;
+                    &lt;h1&gt;购物车案例&lt;/h1&gt;
+                    &lt;table class=&quot;table table-bordered&quot;&gt;
+                        &lt;thead&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;商品id&lt;/th&gt;
+                            &lt;th&gt;商品名字&lt;/th&gt;
+                            &lt;th&gt;商品价格&lt;/th&gt;
+                            &lt;th&gt;商品数量&lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                        &lt;tr v-for=&quot;good in goodList&quot;&gt;
+                            &lt;th&gt;{{good.id}}&lt;/th&gt;
+                            &lt;td&gt;{{good.name}}&lt;/td&gt;
+                            &lt;td&gt;{{good.price}}&lt;/td&gt;
+                            &lt;td&gt;{{good.count}}&lt;/td&gt;
+                            &lt;td&gt;&lt;input type=&quot;checkbox&quot; v-model=&quot;buyGoods&quot; :value=&quot;good&quot;&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                    &lt;hr&gt;
+                    选中的商品:{{buyGoods}}
+                    &lt;hr&gt;
+                    总价格是：{{getPrice()}}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            goodList: [
+                {id: '1', name: '小汽车', price: 150000, count: 2},
+                {id: '2', name: '鸡蛋', price: 2, count: 1},
+                {id: '3', name: '饼干', price: 10, count: 6},
+                {id: '4', name: '钢笔', price: 15, count: 5},
+                {id: '5', name: '脸盆', price: 30, count: 3},
+            ],
+            buyGoods:[],
+        },
+        methods:{
+            getPrice(){
+                var total=0
+                for (item of this.buyGoods){
+                    total+=item.price*item.count
+                }
+                return total
+            }
+        }
+    })
+
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="_2"><strong>购物车拓展全选功能</strong></h4>
+<ul>
+<li>通过判断商品列表和已选择的列表长度是否一致</li>
+</ul>
+<pre><code class="language-js">handleCheckAll(){
+    if(this.checkAll){
+        this.buyGoods = this.goodList;
+    }else{
+        this.buyGoods = [];
+    }
+},
+handleCheckOne(){
+    if(this.buyGoods.length == this.goodList.length){
+        this.checkAll=true;
+    }else{
+        this.checkAll=false;
+    }
+}
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+    &lt;style&gt;
+        .Mycontainer{
+
+            height: 2000px;
+            margin-top: 50px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;app&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;col-md-6 col-md-offset-3 Mycontainer&quot;&gt;
+            &lt;table class=&quot;table table-bordered&quot;&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;商品id&lt;/th&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Price&lt;/th&gt;
+                    &lt;th&gt;count&lt;/th&gt;
+                    &lt;th&gt;&lt;input type=&quot;checkbox&quot; v-model=&quot;checkAll&quot; @change=&quot;handleCheckAll&quot;&gt;&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;tr v-for=&quot;good in goodList&quot;&gt;
+                    &lt;td&gt;{{good.id}}&lt;/td&gt;
+                    &lt;td&gt;{{good.name}}&lt;/td&gt;
+                    &lt;td&gt;{{good.price}}&lt;/td&gt;
+                    &lt;td&gt;{{good.count}}&lt;/td&gt;
+                    &lt;td&gt;&lt;input type=&quot;checkbox&quot; v-model=&quot;buyGoods&quot; :value=&quot;good&quot; @change=&quot;handleCheckOne&quot;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;hr&gt;
+            &lt;p&gt;加入购物车的商品有--&gt;{{buyGoods}}&lt;/p&gt;
+            &lt;hr&gt;
+            &lt;p&gt;总价格是---&gt;{{getPrice()}}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            goodList: [
+                {id: '1', name: '小汽车', price: 150000, count: 2},
+                {id: '2', name: '鸡蛋', price: 2, count: 1},
+                {id: '3', name: '饼干', price: 10, count: 6},
+                {id: '4', name: '钢笔', price: 15, count: 5},
+                {id: '5', name: '脸盆', price: 30, count: 3},
+            ],
+            buyGoods:[],
+            checkAll:false,
+
+        },
+        methods:{
+            getPrice(){
+                var total_money = 0;
+                for(item of this.buyGoods){
+                    total_money += item.price * item.count;
+                }
+                return total_money
+            },
+            handleCheckAll(){
+                if(this.checkAll){
+                    this.buyGoods = this.goodList;
+                }else{
+                    this.buyGoods = [];
+                }
+            },
+            handleCheckOne(){
+                if(this.buyGoods.length == this.goodList.length){
+                    this.checkAll=true;
+                }else{
+                    this.checkAll=false;
+                }
+            }
+        }
+    })
+
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="_3"><strong>购物车拓展加减功能</strong></h4>
+<ul>
+<li>在表格的数量左右增加两个<code>button</code>按钮，分别绑定两个点击事件</li>
+<li>绑定点击事件的同时，要传入当前商品<code>good</code>这个参数</li>
+<li>然后在<code>methods</code>中分别实现两个处理数量的函数 ，来实现加减功能</li>
+</ul>
+<pre><code class="language-js">handlePlus(item){
+    item.count++;
+},
+handleMinus(item){
+    if(item.count&lt;=1){
+        alert(&quot;太少了&quot;);
+    }else{
+        item.count--;
+    }
+}
+</code></pre>
+<p>实现代码</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+    &lt;style&gt;
+        .Mycontainer{
+
+            height: 2000px;
+            margin-top: 50px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;app&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;col-md-6 col-md-offset-3 Mycontainer&quot;&gt;
+            &lt;table class=&quot;table table-bordered&quot;&gt;
+                &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;商品id&lt;/th&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Price&lt;/th&gt;
+                    &lt;th&gt;count&lt;/th&gt;
+                    &lt;th&gt;&lt;input type=&quot;checkbox&quot; v-model=&quot;checkAll&quot; @change=&quot;handleCheckAll&quot;&gt;&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                &lt;tr v-for=&quot;good in goodList&quot;&gt;
+                    &lt;td&gt;{{good.id}}&lt;/td&gt;
+                    &lt;td&gt;{{good.name}}&lt;/td&gt;
+                    &lt;td&gt;{{good.price}}&lt;/td&gt;
+                    &lt;td&gt;&lt;button @click=&quot;handleMinus(good)&quot;&gt;-&lt;/button&gt;{{good.count}}&lt;button @click=&quot;handlePlus(good)&quot;&gt;+&lt;/button&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;input type=&quot;checkbox&quot; v-model=&quot;buyGoods&quot; :value=&quot;good&quot; @change=&quot;handleCheckOne&quot;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;hr&gt;
+            &lt;p&gt;加入购物车的商品有--&gt;{{buyGoods}}&lt;/p&gt;
+            &lt;hr&gt;
+            &lt;p&gt;总价格是---&gt;{{getPrice()}}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            goodList: [
+                {id: '1', name: '小汽车', price: 150000, count: 2},
+                {id: '2', name: '鸡蛋', price: 2, count: 1},
+                {id: '3', name: '饼干', price: 10, count: 6},
+                {id: '4', name: '钢笔', price: 15, count: 5},
+                {id: '5', name: '脸盆', price: 30, count: 3},
+            ],
+            buyGoods:[],
+            checkAll:false,
+
+        },
+        methods:{
+            getPrice(){
+                var total_money = 0;
+                for(item of this.buyGoods){
+                    total_money += item.price * item.count;
+                }
+                return total_money
+            },
+            handleCheckAll(){
+                if(this.checkAll){
+                    this.buyGoods = this.goodList;
+                }else{
+                    this.buyGoods = [];
+                }
+            },
+            handleCheckOne(){
+                if(this.buyGoods.length == this.goodList.length){
+                    this.checkAll=true;
+                }else{
+                    this.checkAll=false;
+                }
+            },
+            handlePlus(item){
+                item.count++;
+            },
+            handleMinus(item){
+                if(item.count&lt;=1){
+                    alert(&quot;太少了&quot;);
+                }else{
+                    item.count--;
+                }
+            }
+        }
+    })
+
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="12v-model">12.v-model 拓展</h3>
+<ul>
+<li>lazy 等待input框的数据绑定失去焦点之后再变化</li>
+<li>number 数组开头，只保留数字，后面的字母不保留 ；字母开头的话，全部保留</li>
+<li>trim 去除首位的空格</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src=&quot;/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;static/plugins/bootstrap/css/bootstrap.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h2&gt;lazy&lt;/h2&gt;
+        &lt;p&gt;&lt;input type=&quot;text&quot; v-model.lazy=&quot;a&quot;&gt;{{a}}&lt;/p&gt;
+        &lt;h2&gt;number&lt;/h2&gt;
+        &lt;p&gt;&lt;input type=&quot;text&quot; v-model.number=&quot;b&quot;&gt;{{b}}&lt;/p&gt;
+        &lt;h2&gt;trim&lt;/h2&gt;
+        &lt;p&gt;&lt;input type=&quot;text&quot; v-model.trim=&quot;c&quot;&gt;{{c}}&lt;/p&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script&gt;
+    new Vue({
+        el: '#app',
+        data: {
+            a: '',
+            b: '',
+            c: '',
+        },
+        methods: {},
+
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img alt="image-20221102153043234" src="../assets/image-20221102153043234.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
