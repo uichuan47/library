@@ -57,6 +57,6 @@ nav:
       - 3.栈: DataStruct/stack/stack.md
       - 4.队列: DataStruct/queue/queue.md
       - 5.树: DataStruct/tree/tree.md
-#      - 6.图: DataStruct/map/map.md
+      - 6.图: DataStruct/map/map.md
       - 7.查找: DataStruct/search/search.md
       - 8.排序: DataStruct/sort/sort.md

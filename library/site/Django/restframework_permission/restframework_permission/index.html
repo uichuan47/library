@@ -1,0 +1,1658 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../restframework_authentication/restframework_authentication/">
+      
+      
+        <link rel="next" href="../../restframeworkThrottle/restframeworkThrottle/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>4.restframework权限组件 - Kento's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4restframework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Kento&#39;s Wiki" class="md-header__button md-logo" aria-label="Kento's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kento's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4.restframework权限组件
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Kento&#39;s Wiki" class="md-nav__button md-logo" aria-label="Kento's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Kento's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev_documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dev_documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev_documents/about_git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.关于Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev_documents/request_process/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.网络请求流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Dev_documents/oppProgramming/opp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.面向对象程序设计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hello/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../message/message/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.message组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requestObj/restframeworkRequestObj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.restframework Request对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restframework_authentication/restframework_authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.restframework认证组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4.restframework权限组件
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4.restframework权限组件
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.前戏
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.前戏">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      与认证组件做对比
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      权限组件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.权限组件的应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.权限组件的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1权限校验失败后自定义返回错误信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 权限组件的执行过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 源码分析
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 权限组件的扩展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 权限组件的扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-orderview-check_permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 在OrderView 类中重写check_permissions方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restframeworkThrottle/restframeworkThrottle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.restframework 限流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restframework_practice/restframework_blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.restframework：blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reatframework_serializer/reatframework_serializer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.restframework序列化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reatframework_serializer_isvalid/reatframework_serializer_isvalid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.restframework数据校验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reatframework_version/reatframework_version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.restframework版本控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../restframework_pager/restframework_pager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.restframework Pager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../django_Jsonresponse/django_Jsonresponse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.JsonResponse对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../django_QueryDict/django_QueryDict/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.DjangoQueryDict对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../django_request/django_request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.djangoRequest对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metaClass/metaClass/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.metaclass元类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C(2022)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            C(2022)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/before/before/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.数据类型和输入输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/scanf/scanf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.scanf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/expression/expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.运算符与逻辑运算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/pointer/pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.指针
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/struct/struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.结构体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DataStruct
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            DataStruct
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/complexity/complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.时间&空间复杂度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/LinearList/LinearList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.线性表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/stack/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/queue/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/tree/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/search/search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/sort/sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.前戏
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.前戏">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      与认证组件做对比
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      权限组件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.权限组件的应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.权限组件的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1权限校验失败后自定义返回错误信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 权限组件的执行过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 源码分析
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 权限组件的扩展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 权限组件的扩展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-orderview-check_permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 在OrderView 类中重写check_permissions方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="4restframework">4.restframework权限组件</h1>
+<p><a href="https://www.django-rest-framework.org/community/third-party-packages/#permissions">官方文档🎈</a></p>
+<h3 id="1">1.前戏</h3>
+<h6 id="_1"><strong>与认证组件做对比</strong></h6>
+<pre><code>认证组件 = [认证类,认证类,认证类] -&gt; 执行每个认证类中的authencate方法，
+                                    - 返回None 时，才继续执行后续的认证类
+</code></pre>
+<p>认证组件之间的关系类似于“或”的关系</p>
+<h6 id="_2"><strong>权限组件</strong></h6>
+<pre><code>权限组件 = [权限类,权限类,权限类...] -&gt; 执行所有权限类的has_permission方法
+                                    - 执行所有的权限类，要求所有权限类都通过
+</code></pre>
+<p>权限组件要保证权限类中的所有方法都返回<code>true</code></p>
+<p>项目中的某一个请求必须通过所有的权限组件中的类</p>
+<p><strong>如果希望权限组件的逻辑关系变成“或”的关系（类似认证组件）</strong>，</p>
+<p>需要对源码进行魔改（<strong>扩展&amp;自定义</strong>）</p>
+<h3 id="2">2.权限组件的应用</h3>
+<ul>
+<li>编写一个模块存储权限类</li>
+</ul>
+<pre><code class="language-python">from rest_framework.permissions import BasePermission
+
+
+class MyPermission(BasePermission):
+    def has_permission(self, request, view):
+        return ...
+</code></pre>
+<ul>
+<li>在视图函数中</li>
+</ul>
+<pre><code class="language-python">from ext.per import MyPermission
+
+
+class OrderView(APIView):
+    permission_classes = [MyPermission]
+
+    def get(self, request):
+        return Response('...')
+</code></pre>
+<ul>
+<li>在配置文件中配置全局权限组件</li>
+</ul>
+<pre><code class="language-python">REST_FRAMEWORK = {
+    &quot;UNAUTHENTICATED_USER&quot;: None,
+    # 值：[认证组件所在的路径] 全局所有的类都应用权限组件
+    &quot;DEFAULT_AUTHENTICATION_CLASSES&quot;: [
+        'ext.auth.QueryParamsAuthentication',
+        'ext.auth.HeaderAuthentication',
+        'ext.auth.NOAuthentication',
+    ],
+    &quot;DEFAULT_PERMISSION_CLASSES&quot;: [
+        'ext.per.MyPermission'
+    ]
+}
+</code></pre>
+<ul>
+<li>全局配置权限组件后，对于不需要权限验证的视图函数(例如：登陆页面)</li>
+</ul>
+<pre><code class="language-python">class LoginView(APIView):
+    permission_classes = []
+    ...
+</code></pre>
+<p><strong>权限组件的应用与认证组件都支持全局应用或者局部视图函数的应用</strong></p>
+<h4 id="21">2.1<strong>权限校验失败后自定义返回错误信息</strong></h4>
+<p>在权限类中自定义<code>message</code>类变量</p>
+<p><code>message = {"code": "1001", "msg": "无权访问"}</code></p>
+<pre><code class="language-python">from rest_framework.permissions import BasePermission
+import random
+
+
+class MyPermission(BasePermission):
+    message = {&quot;code&quot;: &quot;1001&quot;, &quot;msg&quot;: &quot;无权访问&quot;}
+
+    def has_permission(self, request, view):
+        v1 = random.randint(1, 3)
+        if v1 == 2:
+            return True
+        return False
+
+</code></pre>
+<p>权限校验失败后，restframework会自动读取权限类中定义的类变量<code>message</code></p>
+<p><strong>源代码调用的分析</strong></p>
+<pre><code class="language-python">class APIView(View):
+
+    def permission_denied(self, request, message=None, code=None):
+        # deny抛出异常
+        if request.authenticators and not request.successful_authenticator:
+            raise exceptions.NotAuthenticated()
+        raise exceptions.PermissionDenied(detail=message, code=code)
+
+
+    def check_permissions(self, request):
+
+        for permission in self.get_permissions():
+
+            # 循环那个对象列表，执行每一个对象的has_permission方法
+            # 如过返回False
+            if not permission.has_permission(request, self):
+                # 权限失效
+                self.permission_denied(
+                    request,
+                    # 读取的message 是在权限类中自定义message类变量
+                    message=getattr(permission, 'message', None),
+                    code=getattr(permission, 'code', None)
+                )
+</code></pre>
+<p>关注<code>permission_denied</code>方法的变量设置</p>
+<pre><code>def permission_denied(self, request, message=None, code=None):
+</code></pre>
+<ul>
+<li>message=None</li>
+<li>code=None</li>
+</ul>
+<p><code>permission_deny</code>方法在被<code>check_permissions</code>方法调用时传入的参数</p>
+<pre><code class="language-python">self.permission_denied(
+                    request,
+                    # 读取的message 是在权限类中自定义message类变量
+                    message=getattr(permission, 'message', None),
+                    code=getattr(permission, 'code', None)
+                )
+</code></pre>
+<p>通过<strong>反射</strong>读取self中类变量的设置</p>
+<h4 id="22">2.2 权限组件的执行过程</h4>
+<p>定义三个权限类</p>
+<pre><code class="language-python">from rest_framework.permissions import BasePermission
+
+
+class MyPermission1(BasePermission):
+    message = {&quot;code&quot;: &quot;1001&quot;, &quot;msg&quot;: &quot;无权访问&quot;}
+
+    def has_permission(self, request, view):
+        print(&quot;MyPermission1&quot;)
+        return True
+
+
+class MyPermission2(BasePermission):
+    message = {&quot;code&quot;: &quot;1001&quot;, &quot;msg&quot;: &quot;无权访问&quot;}
+
+    def has_permission(self, request, view):
+        print(&quot;MyPermission2&quot;)
+        return False
+
+
+class MyPermission3(BasePermission):
+    message = {&quot;code&quot;: &quot;1001&quot;, &quot;msg&quot;: &quot;无权访问&quot;}
+
+    def has_permission(self, request, view):
+        print(&quot;MyPermission3&quot;)
+        return True
+
+</code></pre>
+<p>其中第二个类<code>return False</code>，其余类都返回<code>True</code></p>
+<p>对一个视图函数应用这些类</p>
+<pre><code class="language-python">class OrderView(APIView):
+    permission_classes = [MyPermission1, MyPermission2, MyPermission3]
+
+    def get(self, request):
+        return Response('...')
+
+</code></pre>
+<p>在终端的输出结果</p>
+<pre><code>[17/Sep/2022 12:48:18] &quot;GET /order/ HTTP/1.1&quot; 403 36
+MyPermission1
+MyPermission2
+</code></pre>
+<p>如果一个类没有通过（<code>return True</code>），后续类将不再执行</p>
+<p><strong>所有类都<code>return True</code>，才能到达视图函数</strong></p>
+<h3 id="3">3. 源码分析</h3>
+<p><img alt="image-20220917233351802" src="../assets/image-20220917233351802.png" /></p>
+<pre><code class="language-python"># 权限组件源码分析
+
+class APIView(View):
+
+
+    # 在get_permissions中读取self.permission_classes (settings全局配置)
+    # 读取对象列表并且返回给check_permissions
+    def get_permissions(self):
+        &quot;&quot;&quot;
+        Instantiates and returns the list of permissions that this view requires.
+        &quot;&quot;&quot;
+        return [permission() for permission in self.permission_classes]
+
+
+
+    def permission_denied(self, request, message=None, code=None):
+        # deny抛出异常
+        if request.authenticators and not request.successful_authenticator:
+            raise exceptions.NotAuthenticated()
+        raise exceptions.PermissionDenied(detail=message, code=code)
+
+
+
+    def check_permissions(self, request):
+
+        for permission in self.get_permissions():
+
+            # 循环那个对象列表，执行每一个对象的has_permission方法
+            # 如过返回False
+            if not permission.has_permission(request, self):
+                # 权限失效
+                self.permission_denied(
+                    request,
+                    # 读取的message 是在权限类中自定义message类变量
+                    message=getattr(permission, 'message', None),
+                    code=getattr(permission, 'code', None)
+                )
+
+    def initial(self, request, *args, **kwargs):
+
+        ......
+        # 认证组件的执行，循环执行每个authenticate方法
+        # 认证组件中出现认证失败，会抛出异常
+        # 认证成功会给request.user/request.auth赋值，之后执行check_permissions
+        self.perform_authentication(request) 
+        # 进行加载权限组件，进行校验，权限组件的运行是在认证组件之后的
+        # 能走到这一步，说明request.user/request.auth已经被赋值
+        self.check_permissions(request)
+        self.check_throttles(request)
+
+
+    def dispatch(self, request, *args, **kwargs):
+
+        self.args = args
+        self.kwargs = kwargs
+        &quot;&quot;&quot;
+        请求的封装，将django的request对象封装进入restframework的
+        requesty对象
+        &quot;&quot;&quot;
+        request = self.initialize_request(request, *args, **kwargs)
+        self.request = request
+        self.headers = self.default_response_headers  # deprecate?
+
+        try:
+            self.initial(request, *args, **kwargs)
+
+            # Get the appropriate handler method
+            if request.method.lower() in self.http_method_names:
+                handler = getattr(self, request.method.lower(),
+                                  self.http_method_not_allowed)
+            else:
+                handler = self.http_method_not_allowed
+
+            response = handler(request, *args, **kwargs)
+
+        except Exception as exc:
+            response = self.handle_exception(exc)
+
+        self.response = self.finalize_response(request, response, *args, **kwargs)
+        return self.response
+
+
+
+
+class OrderView(APIView):
+    permission_classes = [MyPermission1, MyPermission2, MyPermission3]
+
+    def get(self, request):
+        # 由此处进入源码
+        self.dispatch
+        return Response('...')
+
+</code></pre>
+<h3 id="4">4. 权限组件的扩展</h3>
+<p>通过对源码的扩展，改变判断逻辑</p>
+<p>核心是<strong>修改check_permissions方法</strong>的逻辑，在源代码中的check_permissions中，</p>
+<p>只要存在不满足权限类的验证的，check_permissions便会调用<code>permission_denied</code>方法抛出异常</p>
+<p>重写<code>check_permissions</code>方法</p>
+<pre><code class="language-python">def check_permissions(self, request):
+    &quot;&quot;&quot;
+    for permission in self.get_permissions():
+
+        # 循环那个对象列表，执行每一个对象的has_permission方法
+        # 如过返回False
+        if not permission.has_permission(request, self):
+            # 权限失效
+            self.permission_denied(
+                request,
+                # 读取的message 是在权限类中自定义message类变量
+                message=getattr(permission, 'message', None),
+                code=getattr(permission, 'code', None)
+            )
+    &quot;&quot;&quot;
+    for permission in self.get_permissions():
+        # 存在满足一个类的就return通过
+        if permission.has_permission(request, self):
+            return
+            self.permission_denied(
+                        request,
+                        # 读取的message 是在权限类中自定义message类变量
+                        message=getattr(permission, 'message', None),
+                        code=getattr(permission, 'code', None)
+                    )
+</code></pre>
+<h4 id="41-orderview-check_permissions">4.1 在OrderView 类中重写check_permissions方法</h4>
+<p><code>OrderView</code>类继承<code>APIView</code>类，self是<code>OrderView</code>类实例化的对象，所以优先在<code>OrderView</code>类中寻找</p>
+<p><code>check_permissions</code>方法</p>
+<pre><code class="language-python">class OrderView(APIView):
+    permission_classes = [MyPermission1, MyPermission2, MyPermission3]
+
+    def get(self, request):
+        return Response('...')
+
+    def check_permissions(self, request):
+        no_permission_object = []
+        for permission in self.get_permissions():
+        # 存在满足一个类的就return通过
+            if permission.has_permission(request, self):
+                return
+            else:
+                no_permission_object.append(permission)
+        else:
+            self.permission_denied(
+                            request,
+                            # 读取的message 是在权限类中自定义message类变量
+                            # 取错误信息的第一个
+                            message=getattr(no_permission_object[0], 'message', None),
+                            code=getattr(no_permission_object[0], 'code', None)
+                        )
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>

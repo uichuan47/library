@@ -1,0 +1,1478 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+    
+    
+      
+        <title>7. CSS 更多 - Kento's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-css" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Kento&#39;s Wiki" class="md-header__button md-logo" aria-label="Kento's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kento's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. CSS 更多
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Kento&#39;s Wiki" class="md-nav__button md-logo" aria-label="Kento's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Kento's Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dev_documents
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dev_documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.关于Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../request_process/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.网络请求流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oppProgramming/opp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.面向对象程序设计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/hello/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/message/message/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.message组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/requestObj/restframeworkRequestObj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.restframework Request对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_authentication/restframework_authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.restframework认证组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_permission/restframework_permission/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.restframework权限组件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframeworkThrottle/restframeworkThrottle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.restframework 限流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_practice/restframework_blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.restframework：blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/reatframework_serializer/reatframework_serializer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.restframework序列化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/reatframework_serializer_isvalid/reatframework_serializer_isvalid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.restframework数据校验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/reatframework_version/reatframework_version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.restframework版本控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/restframework_pager/restframework_pager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.restframework Pager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/django_Jsonresponse/django_Jsonresponse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.JsonResponse对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/django_QueryDict/django_QueryDict/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.DjangoQueryDict对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/django_request/django_request/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.djangoRequest对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Django/metaClass/metaClass/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.metaclass元类
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C(2022)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            C(2022)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/before/before/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.数据类型和输入输出
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/scanf/scanf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.scanf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/expression/expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.运算符与逻辑运算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/pointer/pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.指针
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C%282022%29/struct/struct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.结构体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DataStruct
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            DataStruct
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/complexity/complexity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.时间&空间复杂度
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/LinearList/LinearList/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.线性表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/stack/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/queue/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.队列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/tree/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/search/search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DataStruct/sort/sort/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1css" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.CSS 布局
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.CSS 布局">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 display属性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 width 宽属性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 position属性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 溢出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 浮动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-displayinline-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 display:inline-block
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 水平&amp;垂直布局
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. CSS 组合器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. CSS 组合器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 后代选择器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 子选择器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="7-css">7. CSS 更多</h1>
+<h2 id="1css">1.CSS 布局</h2>
+<h3 id="11-display">1.1 display属性</h3>
+<p><code>display</code>属性是控制布局的最重要的属性</p>
+<p>display属性规定是否/如何显示元素</p>
+<p>大多数元素的默认display值为<code>block</code>或<code>inline</code></p>
+<p><strong>块级别元素</strong></p>
+<p>块级元素总是从新行开始，并占据可用的全部宽度（尽可能向左和向右伸展）。</p>
+<ul>
+<li>div</li>
+<li>h1-h6</li>
+<li>p</li>
+<li>form</li>
+<li>header</li>
+<li>footer</li>
+<li>section</li>
+</ul>
+<p><strong>行内元素</strong></p>
+<p>内联元素不从新行开始，仅占用所需的宽度</p>
+<ul>
+<li>span</li>
+<li>a</li>
+<li>img</li>
+</ul>
+<p><strong>display:none</strong></p>
+<p>该属性值通常搭配js使用，用来控制元素的显示和隐藏</p>
+<p>默认情况下，script元素使用<code>display:none</code></p>
+<p><strong>覆盖默认的display值</strong></p>
+<p>如前所述，每个元素都有一个默认 display 值。但是，您可以覆盖它。</p>
+<p>将行内元素更改为块元素，反之亦然，对于使页面以特定方式显示同时仍遵循 Web 标准很有用。</p>
+<p>隐藏元素</p>
+<p>选择<code>display:none</code>还是<code>visibility:hidden</code></p>
+<ul>
+<li>
+<p>display:none</p>
+<p>隐藏元素，并且页面布局会因为元素的消失而发生改变</p>
+</li>
+<li>
+<p>visibility:hidden</p>
+<p>元素被隐藏，但是它仍然会占据空间</p>
+</li>
+</ul>
+<h3 id="12-width">1.2 width 宽属性</h3>
+<p><strong>使用 width、max-width 和 margin: auto</strong></p>
+<p>块级元素始终占用可用的全部宽度（尽可能向左和向右伸展）</p>
+<p>设置块级元素的width属性，防止它延伸到容器的边缘，可以将外边距设置为auto，这样可以使元素在容器中水平居中</p>
+<pre><code class="language-css">div.ex1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+</code></pre>
+<h3 id="13-position">1.3 position属性</h3>
+<p><code>position</code>属性规定应用元素的定位方法的类型</p>
+<p>有五个不同的位置值</p>
+<ul>
+<li>static</li>
+<li>relative</li>
+<li>fixed</li>
+<li>absoulue</li>
+<li>sticky</li>
+</ul>
+<p>元素其实是使用 top、bottom、left 和 right 属性定位的。</p>
+<p>但是，除非首先设置了 position 属性，否则这些属性将不起作用。根据不同的 position 值，它们的工作方式也不同。</p>
+<p><strong>position：static</strong></p>
+<p>HTML元素默认情况下的定位方式为static静态</p>
+<p>静态定位的元素不受top、bottom、left 和 right 属性的影响。</p>
+<pre><code class="language-css">div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+</code></pre>
+<p><strong>position:relative</strong></p>
+<p>相对性，设置改属性的元素相对于其正常位置进行定位</p>
+<p>设置相对定位的元素的 top、right、bottom 和 left 属性将导致其偏离其正常位置进行调整。</p>
+<p>不会对其余内容进行调整来适应元素留下的任何空间。</p>
+<pre><code class="language-css">div.relative {
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+}
+</code></pre>
+<p><strong>position:fixed</strong></p>
+<p>设置该属性的元素是相对于视口定位的，滚动页面，位置不变</p>
+<p>top、right、bottom 和 left 属性用于定位此元素。</p>
+<pre><code class="language-css">div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+</code></pre>
+<p><strong>position：absolute</strong></p>
+<p><code>position：absolute</code>的元素相对于最近的定位祖先元素进行定位（而不是相对于视口定位，如 fixed）。</p>
+<p>然而，如果绝对定位的元素没有祖先，它将使用文档主体（body），并随页面滚动一起移动。</p>
+<p>“被定位的”元素是其位置除 <code>static</code> 以外的任何元素。</p>
+<p><img alt="image-20220913171255171" src="../assets/image-20220913171255171.png" /></p>
+<pre><code class="language-css">div.relative {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 3px solid #73AD21;
+} 
+
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+</code></pre>
+<p><strong>重叠元素</strong></p>
+<p>在对元素进行定位时，它们可以与其他元素重叠。</p>
+<p><code>z-index</code> 属性指定元素的堆栈顺序（哪个元素应放置在其他元素的前面或后面）。</p>
+<p>元素可以设置正或负的堆叠顺序：</p>
+<pre><code class="language-css">img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+</code></pre>
+<p><a href="https://www.w3school.com.cn/css/pro_css_positioning.asp">更多关于CSS定位🎈</a></p>
+<h3 id="14">1.4 溢出</h3>
+<p>CSS overflow属性控制对与太大而无法完全显示的内容进行处理</p>
+<p><strong>该属性可以设置以下的值</strong></p>
+<ul>
+<li>
+<p>visible </p>
+<p>默认，溢出不进行裁剪，内容在元素框外渲染</p>
+</li>
+<li>
+<p>hidden</p>
+<p>溢出被裁剪，其余内容将不可见</p>
+</li>
+<li>
+<p>scroll</p>
+<p>溢出裁剪，可以通过滚动条查看其余内容</p>
+</li>
+<li>
+<p>auto</p>
+<p>与scroll类似，仅在必要时添加滚动条</p>
+</li>
+</ul>
+<pre><code class="language-css">div {
+  overflow: hidden;
+}
+</code></pre>
+<h3 id="15">1.5 浮动</h3>
+<p><strong>CSS float 属性规定元素如何浮动</strong></p>
+<p><strong>CSS clear属性规定哪些元素可以在清除的元素旁边以及哪一侧浮动</strong></p>
+<p><strong><code>float</code> 属性可以设置以下值之一：</strong></p>
+<ul>
+<li>left - 元素浮动到其容器的左侧</li>
+<li>right - 元素浮动在其容器的右侧</li>
+<li>none - 元素不会浮动（将显示在文本中刚出现的位置）。默认值。</li>
+<li>inherit - 元素继承其父级的 float 值</li>
+</ul>
+<p>最简单的用法是，<code>float</code> 属性可实现（报纸上）文字包围图片的效果。</p>
+<p><code>clear</code> 属性指定哪些元素可以浮动于被清除元素的旁边以及哪一侧。</p>
+<p><strong><code>clear</code> 属性可设置以下值之一：</strong></p>
+<ul>
+<li>none - 允许两侧都有浮动元素。默认值</li>
+<li>left - 左侧不允许浮动元素</li>
+<li>right- 右侧不允许浮动元素</li>
+<li>both - 左侧或右侧均不允许浮动元素</li>
+<li>inherit - 元素继承其父级的 clear 值</li>
+</ul>
+<p><strong>clearfix Hack</strong></p>
+<p>如果一个元素比包含它的元素高，并且它是浮动的，它将“溢出”到其容器之外：</p>
+<p>然后我们可以向包含元素添加 overflow: auto;</p>
+<pre><code class="language-css">.clearfix {
+  overflow: auto;
+}
+</code></pre>
+<h3 id="16-displayinline-block">1.6 display:inline-block</h3>
+<p>与 <code>display: inline</code> 相比，主要区别在于 <code>display: inline-block</code> 允许在元素上设置宽度和高度。</p>
+<p>同样，如果设置了 display: inline-block，将保留上下外边距/内边距，而 display: inline 则不会。</p>
+<p>与 display: block 相比，主要区别在于 display：inline-block 在元素之后不添加换行符，因此该元素可以位于其他元素旁边。</p>
+<h3 id="17">1.7 水平&amp;垂直布局</h3>
+<ul>
+<li>
+<p>居中对齐</p>
+<p>要使块元素（例如 div ）水平居中，请使用 <code>margin: auto;</code></p>
+</li>
+</ul>
+<pre><code class="language-css">.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 20px;
+}
+</code></pre>
+<ul>
+<li>
+<p>居中对齐文本</p>
+<p>如果仅需在元素内居中文本，请使用 <code>text-align: center;</code></p>
+</li>
+</ul>
+<pre><code class="language-css">.center {
+  text-align: center;
+  border: 3px solid green;
+}
+</code></pre>
+<ul>
+<li>
+<p>左右对齐 - position</p>
+<p>对齐元素的一种方法是使用 <code>position: absolute;</code></p>
+</li>
+</ul>
+<pre><code class="language-css">.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 20px;
+}
+</code></pre>
+<ul>
+<li>左右对齐 - float</li>
+</ul>
+<pre><code class="language-css">.right {
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+</code></pre>
+<ul>
+<li>
+<p>垂直对齐 - padding</p>
+<p>有很多方法可以在 CSS 中垂直对齐元素。一个简单的解决方案是使用上下内边距：</p>
+</li>
+</ul>
+<pre><code class="language-css">.center {
+  padding: 70px 0;
+  border: 3px solid green;
+}
+</code></pre>
+<h2 id="2-css">2. CSS 组合器</h2>
+<p>组合器是解释选择器之间关系的某种机制。</p>
+<p>CSS 选择器可以包含多个简单选择器。在简单选择器之间，我们可以包含一个组合器。</p>
+<p>CSS 中有四种不同的组合器：</p>
+<ul>
+<li>后代选择器 (空格)</li>
+<li>子选择器 (<code>&gt;</code>)</li>
+<li>相邻兄弟选择器 (<code>+</code>)</li>
+<li>通用兄弟选择器 (<code>~</code>)</li>
+</ul>
+<h3 id="21">2.1 后代选择器</h3>
+<p>后代选择器匹配属于指定元素后代的所有元素。</p>
+<pre><code class="language-css">div p {
+  background-color: yellow;
+}
+</code></pre>
+<p>下面的例子选择 div 元素内的所有 p 元素</p>
+<h3 id="22">2.2 子选择器</h3>
+<p>子选择器匹配属于指定元素子元素的所有元素。</p>
+<p>下面的例子选择属于 div 元素子元素的所有 p 元素：</p>
+<pre><code class="language-css">div &gt; p {
+  background-color: yellow;
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
